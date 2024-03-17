@@ -62,7 +62,7 @@ body, html {
     transition:ease-in-out .3s;
 }
 /* Estilos para dispositivos con un ancho máximo de 768px */
-@media (max-width: 450px) {
+@media (max-width: 390px) {
     .sidebar {
         display: none; /* Ocultar el sidebar */
     }
