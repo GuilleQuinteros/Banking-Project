@@ -62,7 +62,7 @@ body, html {
     transition:ease-in-out .3s;
 }
 /* Estilos para dispositivos con un ancho máximo de 768px */
-@media (min-width: 390px) {
+@media (min-width: 400px) {
     .sidebar {
         display: none; /* Ocultar el sidebar */
     }
@@ -106,7 +106,7 @@ body, html {
 }
 
 /* Estilos para dispositivos con un ancho mínimo de 451px */
-@media (max-width: 451px) {
+@media (max-width: 501px) {
     .menu-btn {
         display: none; /* Ocultar el botón del menú */
     }
