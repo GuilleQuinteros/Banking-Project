@@ -106,7 +106,7 @@ body, html {
 }
 
 /* Estilos para dispositivos con un ancho mínimo de 451px */
-@media (min-width: 391px) {
+@media (max-width: 451px) {
     .menu-btn {
         display: none; /* Ocultar el botón del menú */
     }
