@@ -61,8 +61,8 @@ body, html {
     transform: scale(1.2);
     transition:ease-in-out .3s;
 }
-/* Estilos para dispositivos con un ancho máximo de 768px */
-@media (min-width: 400px) {
+
+@media (min-width: 390px) {
     .sidebar {
         display: none; /* Ocultar el sidebar */
     }
@@ -106,10 +106,30 @@ body, html {
 }
 
 /* Estilos para dispositivos con un ancho mínimo de 451px */
-@media (max-width: 389px) {
+@media (max-width: 391px) {
     .menu-btn {
         display: none; /* Ocultar el botón del menú */
     }
+}
+
+/* Mostrar el menú hamburguesa en dispositivos con menos de 400px de ancho */
+@media screen and (max-width: 400px) {
+  .menu-hamburguesa {
+    display: block;
+  }
+  .menu {
+    display: none;
+  }
+}
+
+/* Mostrar el menú normal en dispositivos con más de 400px de ancho */
+@media screen and (min-width: 401px) {
+  .menu-hamburguesa {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
 }
     
 
