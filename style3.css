@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url(assets/fondo_dash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+

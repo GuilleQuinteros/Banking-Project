@@ -1,0 +1,151 @@
+body{
+    background-color: rgba(36, 179, 189, 0.959);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    position:static;
+}
+
+.bg-image {
+    position: fixed; /* Posicionamiento fijo para que la imagen de fondo ocupe toda la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar la imagen de fondo para que cubra toda la ventana */
+    z-index: -1; /* Asegurar que la imagen de fondo esté detrás de otros elementos */
+}
+.banner {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 54px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+#loginForm {
+    position: absolute; /* Posicionamiento absoluto para el formulario */
+    top: 70%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Centrar completamente */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para que el texto sea legible */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px; /* Ancho máximo del contenedor del formulario */
+    margin: 15px; /* Centrar horizontalmente */
+}
+
+form{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-bottom: solid #bebed2 2px;
+    border-radius: 5px;
+    box-shadow: inset;
+    font-size: 18px;
+    color: #0c3dece1;
+    height:  40px;
+    width: 250px;
+}
+
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/back-splash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.login-screen {
+    display: none;
+}
+
+/* Estilo para centrar la ventana emergente verticalmente */
+.modal {
+    display: none; /* Por defecto oculto */
+    position: fixed; /* Posicionamiento fijo para que la ventana se mantenga en su lugar al hacer scroll */
+    z-index: 1; /* Sobreponer la ventana emergente a otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar el desplazamiento cuando el contenido excede el tamaño de la ventana */
+    background-color: rgb(0,0,0); /* Fondo oscuro */
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con transparencia */
+}
+
+/* Estilo para el contenido de la ventana emergente */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Margen superior e inferior, y centrado horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del contenido */
+    max-width: 400px; /* Ancho máximo del contenido */
+}
+
+/* Estilo para el botón de cierre */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .banner {
+        position:absolute;
+        margin: 55px;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        font-size: 38px;
+}
+
+.container, h2 , input{
+    font-size: 16px;
+    visibility: visible !important;
+}
+
+}

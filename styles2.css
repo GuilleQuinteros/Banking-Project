@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url(assets/fondo_dash.jpg);
+    background-size: cover;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    opacity: 80%;
+    top: 0;
+    left: 0;
+    background-color: #bce7e6;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: #110101;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+   transform: scale(1.1);
+   transition:ease-in-out .3s;
+}
+
+.content {
+    margin-left: 250px; /* Ancho de la barra lateral */
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,  0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    opacity:  0.9;
+    
+}
+.card-img-top:hover {
+    transform: scale(1.2);
+    transition:ease-in-out .3s;
+}
+/* Estilos para dispositivos con un ancho máximo de 768px */
+@media (max-width: 450px) {
+    .sidebar {
+        display: none; /* Ocultar el sidebar */
+    }
+    
+    .sidebar.open {
+        display: block; /* Mostrar el sidebar cuando está abierto */
+        width: 200px; /* Ancho del sidebar */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #f8f9fa; /* Color de fondo del sidebar */
+        padding-top: 60px; /* Espacio superior para evitar que el menú hamburguesa se superponga */
+        transition: width 0.3s ease; /* Transición suave */
+    }
+    
+    .sidebar ul {
+        padding: 0;
+    }
+    
+    .sidebar ul li {
+        list-style: none;
+        padding: 8px 16px;
+    }
+    
+    .content {
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .menu-btn {
+        display: block; /* Mostrar el botón del menú */
+        position: fixed;
+        color: #1aefab;
+        top: 20px;
+        left: 20px;
+        z-index: 9999; /* Asegurar que esté por encima del contenido */
+    }
+
+    h1, p {
+        text-align: right; /* Alinear el texto a la derecha */
+    }
+}
+
+/* Estilos para dispositivos con un ancho mínimo de 451px */
+@media (min-width: 391px) {
+    .menu-btn {
+        display: none; /* Ocultar el botón del menú */
+    }
+}
+    
+

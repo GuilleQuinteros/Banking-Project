@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="dashboard" style="display: none;"></div>
+    <div class="splash-screen">
+        <div class="splash-content">
+            <img src="assets/init-spahs/splash.gif" alt=""><br><br>
+            <p style="font-size: 32px; color: #0bd7ee; font-weight: bolder;">HOLA! BIENVENIDOS!!</p>
+            <p style="font-size: 28px; color: #0bd7ee; font-weight: bolder;">AGUARDE UNOS INSTANTES</p>
+        </div>
+    </div>
+
+
+<div class="login-screen"> 
+    <header>
+        <img src="assets/background.jpg" alt="" class="bg-image"></img>
+        <div class="banner">
+            <p>BANCO ONLINE</p>
+        </div>
+    </header>
+    <form action="" id="loginForm">
+        <div class="container">
+            <h2>BIENVENIDOS</h2>
+            <label for="name" style="font-size: 24px;">Usuario </label>
+            <input type="text" name="nombre" id="nombre" required>
+            <label for="cuenta" style="font-size: 24px;">Contraseña</label>
+            <input type="password" name="contrasena" id="contrasena" required>
+            <button type="submit" style="height: 35px; width: 130px; border-radius: 5px; background-color: rgb(40, 212, 189);">INGRESAR</button>
+        </div>
+        <p>¿No tienes una cuenta? <button id="registerButton">Registrarse</button></p>
+        <p id="error-message" style="color: red; display: none;">Usuario o contraseña incorrectos.</p>
+    </form>
+    <!--VENTANA EMERGENTE MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registro</h2>
+                <form id="registerForm">
+                    <label for="newUsername">Nombre de usuario:</label>
+                    <input type="text" id="newUsername" required>
+                    <label for="newPassword">Contraseña:</label>
+                    <input type="password" id="newPassword" required>
+                    <label for="confirmPassword">Confirmar contraseña:</label>
+                    <input type="password" id="confirmPassword" required>
+                    <button type="submit">Registrarse</button>
+                </form>
+        </div>
+    </div>
+</div>
+    <script src="scripts/initem.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Función para mostrar el modal de registro
+        function mostrarRegistroModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // Función para ocultar el modal de registro
+        function ocultarRegistroModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // Evento de clic en el botón de registro para mostrar el modal
+        document.getElementById("registerButton").addEventListener("click", function() {
+            mostrarRegistroModal();
+        });
+
+        // Evento de clic en el botón de cierre del modal para ocultarlo
+        document.getElementsByClassName("close")[0].addEventListener("click", function() {
+            ocultarRegistroModal();
+        });
+
+        // Evento de clic fuera del modal para cerrarlo
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modal")) {
+                ocultarRegistroModal();
+            }
+        };
+
+        // Evento de envío del formulario de registro para agregar un nuevo usuario
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            // Obtener los valores del formulario
+            var newUsername = document.getElementById("newUsername").value;
+            var newPassword = document.getElementById("newPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Verificar que las contraseñas coincidan
+            if (newPassword !== confirmPassword) {
+                alert("Las contraseñas no coinciden");
+                return;
+            }
+
+            // Agregar el nuevo usuario al arreglo de usuarios
+            agregarUsuario(newUsername, newPassword);
+
+            // Limpiar los campos del formulario después del registro
+            document.getElementById("newUsername").value = "";
+            document.getElementById("newPassword").value = "";
+            document.getElementById("confirmPassword").value = "";
+
+            // Opcional: mostrar un mensaje de confirmación
+            alert("Usuario registrado exitosamente");
+
+            // Opcional: cerrar el modal después del registro
+            ocultarRegistroModal();
+        });
+
+        // Función para agregar un nuevo usuario al arreglo de usuarios
+        function agregarUsuario(username, password) {
+            // Aquí debes implementar la lógica para agregar el usuario al arreglo de usuarios
+            // Por ejemplo:
+            // usuarios.push({ nombre: username, contrasena: password });
+            console.log("Nuevo usuario registrado:", username);
+        }
+    </script>
+</body>
+</html>

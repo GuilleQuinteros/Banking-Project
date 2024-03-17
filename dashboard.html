@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Bank</title>
+        <link rel="stylesheet" href="styles2.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /* Estilos para dispositivos con un ancho máximo de 450px */
+            
+        </style>
+    </head>
+    <body>
+        <div id="dashboard">
+            <div class="menu-btn">
+                <span onclick="toggleSidebar()">&#9776;</span> <!-- Icono de menú hamburguesa -->
+            </div>
+        
+            <div class="sidebar">
+            <h2>Menú</h2>
+                <ul>
+                    <li><img src="assets/icons/pagina-de-inicio.png" alt=""> <a href="#">Inicio</a></li>
+                    <li><img src="assets/icons/expediente.png" alt=""> <a href="#">Cuenta</a></li>
+                    <li><img src="assets/icons/transferencia-de-dinero.png" alt=""> <a href="#">Transferencias</a></li>
+                    <li><img src="assets/icons/pago.png" alt=""> <a href="#">Pagos</a></li>
+                    <li><img src="assets/icons/configuraciones.png" alt=""> <a href="#">Configuración</a></li>
+                    <li><img src="assets/icons/cerrar-sesion.png" alt=""> <a href="index.html">Cerrar</a></li>
+                </ul>
+            </div>
+    
+            <div class="content">
+            <!-- Contenido del dashboard aquí -->
+                <h1>Bienvenido, <span id="username"></span></h1> <!-- Reemplaza "Usuario" con el nombre del usuario que inició sesión -->
+                <p>A continuación, se muestran algunos movimientos de cuenta:</p>
+                <table class="table table-bordered" style="background-color: azure;">
+                    <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <td>2024-03-12</td>
+                    </tr>
+                    <tr>
+                        <th>Descripción</th>
+                        <td>Depósito</td>
+                    </tr>
+                    <tr>
+                        <th>Monto</th>
+                        <td>$1000.00</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha</th>
+                        <td>2024-03-13</td>
+                    </tr>
+                    <tr>
+                        <th>Descripción</th>
+                        <td>Retiro</td>
+                    </tr>
+                    <tr>
+                        <th>Monto</th>
+                        <td>-$500.00</td>
+                    </tr>
+                    <!-- Agrega más filas según sea necesario -->
+                    </thead>
+                </table>
+                <h3>Tus Tarjetas</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="/assets/cards/card-generic 1.png" class="card-img-top" alt="Tarjeta de Crédito 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Tarjeta de Crédito 1</h5>
+                                <p class="card-text">Límite disponible: $150.000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="assets/cards/card-generic 2.png" class="card-img-top" alt="Tarjeta de Crédito 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Tarjeta de Debito</h5>
+                                <p class="card-text">Dinero disponible: $8000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="container main-content">
+                
+        </div>
+        <script src="scripts/dasboard.js"></script>
+    </body>
+</html>

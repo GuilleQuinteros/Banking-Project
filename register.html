@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Online Bank</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        <form id="registerForm" action="scripts/initem.js" method="post">
+            <div class="form-group">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar contraseña:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" style="height: 35px; width: 130px; border-radius: 5px; background-color: rgb(40, 212, 189);">Registrarse</button>
+        </form>
+    </div>
+
+    <script src="scripts/initem.js"></script>
+    <script>
+        // Manejar el envío del formulario de registro
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Verificar que las contraseñas coincidan
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+                return;
+            }
+
+            // Verificar si el usuario ya existe en el arreglo de usuarios
+            const usuarioExistente = usuarios.find(user => user.nombre === username);
+            if (usuarioExistente) {
+                alert("El nombre de usuario ya está en uso. Por favor, elige otro nombre.");
+                return;
+            }
+
+            // Agregar el nuevo usuario al arreglo de usuarios
+            agregarUsuario(username, password);
+
+            // Opcional: Mostrar mensaje de éxito
+            alert("¡Registro exitoso! Puedes iniciar sesión con tu nuevo usuario.");
+
+            // Redirigir a la página de inicio de sesión
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
